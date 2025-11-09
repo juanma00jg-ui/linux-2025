@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  website:
+    build: 
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "5001:80"
+    volumes:
+      - ./index.html:/var/www/html/index.html
+
+  # environment: 
+     # FLASK_DEBUG: 1
+ #redis:
+   #image: redis:alpin
+  
