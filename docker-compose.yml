@@ -13,5 +13,8 @@ services:
     #Indicamos la traduccion de puertos, del 5001 de la maquina virtual, hacia el 80 del contenedor
     ports:
       - "5001:80"
+    #Aclaramos al docker compose que copie el index html local a la ubicacion por default del nginx
+    volumes:
+      - ./index.html:/var/www/html/index.html
 
   
