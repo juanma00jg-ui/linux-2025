@@ -1,16 +1,17 @@
+#La version de docker compose que se usara
 version: '3.8'
+#Servicio/s que vamos a desplegar
 services:
+  #Nombre que le pondra docker compose a este servicio
   website:
+    #construye la imagen en la ubicacion en la que se encuentra el docker compose
     build: 
+      #Especificacion del contenedor al docker compose
       dockerfile: Dockerfile
+      #Especificamos donde buscar el dockerfile
       context: .
+    #Indicamos la traduccion de puertos, del 5001 de la maquina virtual, hacia el 80 del contenedor
     ports:
       - "5001:80"
-    volumes:
-      - ./index.html:/var/www/html/index.html
 
-  # environment: 
-     # FLASK_DEBUG: 1
- #redis:
-   #image: redis:alpin
   
